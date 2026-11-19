@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_medium"
+    android:layout_marginVertical="@dimen/spacing_small"
+    app:cardCornerRadius="@dimen/card_corner_radius_large"
+    app:cardElevation="@dimen/card_elevation_medium"
+    app:cardBackgroundColor="@color/white"
+    android:background="@drawable/bg_card_gradient"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_large">
+
+        <!-- Mood Emoji -->
+        <TextView
+            android:id="@+id/tv_mood_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginEnd="@dimen/spacing_small"
+            tools:text="😊" />
+
+        <!-- Mood Label -->
+        <TextView
+            android:id="@+id/tv_mood_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_body_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tv_mood_emoji"
+            app:layout_constraintTop_toTopOf="@+id/tv_mood_emoji"
+            app:layout_constraintEnd_toStartOf="@+id/tv_mood_time"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintWidth_default="wrap"
+            android:layout_marginStart="@dimen/spacing_medium"
+            tools:text="Happy" />
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tv_mood_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_body_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_mood_label"
+            tools:text="2:30 PM" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tv_mood_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_body_medium"
+            app:layout_constraintStart_toStartOf="@+id/tv_mood_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mood_label"
+            app:layout_constraintEnd_toStartOf="@+id/btn_share_entry"
+            android:layout_marginTop="@dimen/spacing_extra_small"
+            tools:text="Today" />
+
+        <!-- Notes -->
+        <TextView
+            android:id="@+id/tv_mood_notes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_body_medium"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/tv_mood_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mood_date"
+            app:layout_constraintEnd_toStartOf="@+id/btn_share_entry"
+            android:layout_marginTop="@dimen/spacing_small"
+            tools:text="Had a great workout this morning!"
+            tools:visibility="visible" />
+
+        <!-- Share -->
+        <ImageButton
+            android:id="@+id/btn_share_entry"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Share mood entry"
+            android:src="@drawable/ic_share"
+            app:tint="@color/primary"
+            app:layout_constraintEnd_toStartOf="@+id/btn_delete_entry"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="@dimen/spacing_small" />
+
+        <!-- Delete -->
+        <ImageButton
+            android:id="@+id/btn_delete_entry"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete mood entry"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
